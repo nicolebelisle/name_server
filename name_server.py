@@ -16,3 +16,10 @@ r = requests.get("http://vcm-7631.vm.duke.edu:5001/list")
 answer = r.json()
 for student in answer:
     print("Name of student is {}".format(student["name"]))
+
+sum_json = {
+   "a": 1,
+   "b": 2
+}
+s = requests.post("http://vcm-7631.vm.duke.edu:5001/sum",json=sum_json)
+print(s.json)
